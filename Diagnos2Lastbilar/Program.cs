@@ -33,11 +33,23 @@ namespace Diagnos2Lastbilar
             
         }
     }
+    class Lastbil : Bil
+    {
+        private int Vikt;
+
+        public Lastbil(string registreringsNumber, string tillverkare, int årtal, bool besiktad, int vikt) : base(registreringsNumber, tillverkare, årtal, besiktad)
+        {
+            Vikt = vikt;
+        }
+
+       
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            
+            Lastbil minLastbil = new Lastbil("ABC123", "Volvo", 1999, true, 64);
+            Console.WriteLine(minLastbil);
         }
     }
 }
