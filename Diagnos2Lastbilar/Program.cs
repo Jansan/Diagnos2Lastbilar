@@ -114,8 +114,18 @@ namespace Diagnos2Lastbilar
                         }
                         Console.ReadLine();
                         break;
-                    default:
+                    case 2:
+                        Console.Clear();
+                        foreach (Bil referens in bilsLista)
+                        {
+                            Console.WriteLine("\t\t" + referens + "\n" + referens.Körkort());
+                        }
+                        Console.ReadLine();
                         break;
+                    case 3:
+                        isRunning = false;
+                        break;
+                   
                 }
             }
 
