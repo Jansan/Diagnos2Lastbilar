@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 namespace Diagnos2Lastbilar
 {
+    /*
+     *
+     * Här börjar vi med att skapa Bil-klassen och dess underliggande metoder.
+     * Vi arbetar med fyra huvudsakliga egenskaper som får tilldelade värden i sin konstruktor.
+     * Vi har även en ToString-override och en Körkortsmetod som kan returnera ett strängvärde.
+     * 
+     */
     class Bil
     {
         protected string RegistreringsNumber;
@@ -38,6 +45,13 @@ namespace Diagnos2Lastbilar
             
         }
     }
+    /*
+     * 
+     * Lastbilsklassen är en underklass till Bil-klassen. Den ärver alla egenskaper, men har även en egen privat egenskap i form av Vikt.
+     * Värdet motsvarar hur mycket, i ton, som lastbilen är tillåten att dra.
+     * Vi har en override som tar över "Körkort"-metoden och gör sin egen utskrift, samt en ViktKontroll-metod som är unik för klassen.
+     * 
+     */
     class Lastbil : Bil
     {
         private int Vikt;
@@ -77,6 +91,11 @@ namespace Diagnos2Lastbilar
     {
         static void Main(string[] args)
         {
+            /*
+             * 
+             * En grundläggande struktur med en lista som innehåller några grundläggande bilar och lastbilar.
+             * 
+             */
             List<Bil> bilsLista = new List<Bil>();
             bilsLista.Add(new Lastbil("HTR896", "Toyota", 2005, true, 85));
             bilsLista.Add(new Lastbil("JKL564", "Volvo", 2015, false, 60));
@@ -97,6 +116,9 @@ namespace Diagnos2Lastbilar
                 switch (result)
                 {
                     case 1:
+                        /*
+                         * Testar ett inmatat värde mot samtliga Lastbilar som är sparade i listan.
+                         */
                         Console.Clear();
                         Console.WriteLine("\n\n\t\t* Var god skriv in ett värde du vill testa mot de registrerade Lastbilarna *");
                         Console.Write("\n\t\t* ");
@@ -115,6 +137,9 @@ namespace Diagnos2Lastbilar
                         Console.ReadLine();
                         break;
                     case 2:
+                        /*
+                         * Skriver ut samtliga bilars ToString och Körkort. Vi behöver inte särskilja objekten här då samtliga innehåller de här metoderna.
+                         */
                         Console.Clear();
                         foreach (Bil referens in bilsLista)
                         {
@@ -123,6 +148,9 @@ namespace Diagnos2Lastbilar
                         Console.ReadLine();
                         break;
                     case 3:
+                        /*
+                         * Avslutar programmet.
+                         */
                         isRunning = false;
                         break;
                    
